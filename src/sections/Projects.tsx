@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Github, ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '@/lib/assets';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +16,7 @@ const projects = [
       'Built end-to-end in hackathon time: environment design, agent loop, tool surface, evaluation',
       'No tutorial scaffolding — shaped how I think about AI in production',
     ],
-    image: '/incident-commander.png',
+    image: assetUrl('incident-commander.png'),
     tags: ['Python', 'Pydantic', 'WebSocket', 'TRL', 'Unsloth', 'GRPO'],
     github: 'https://github.com/vasubhrdwj/incident-commander-openenv',
   },
@@ -26,7 +27,7 @@ const projects = [
     description:
       'A Layer 4 load balancer built with HAProxy for a FastAPI microservices cluster. Features active health checks, rate limiting, and automated failover — fully containerized with Docker Compose.',
     highlights: [],
-    image: '/image-2.jpg',
+    image: assetUrl('image-2.jpg'),
     tags: ['HAProxy', 'Docker', 'FastAPI', 'DevOps', 'JavaScript', 'Python'],
     github: 'https://github.com/vasubhrdwj/l4-load-balancer',
   },

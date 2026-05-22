@@ -55,7 +55,7 @@ function App() {
         <Stats />
         <Skills />
         <Projects />
-        <Experience scrollTo={scrollTo} />
+        <Experience />
         <Terminal 
           isOpen={terminalOpen} 
           onOpen={() => setTerminalOpen(true)} 

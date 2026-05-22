@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { assetUrl } from '@/lib/assets';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Trophy, GitBranch, Target, Award, Layers } from 'lucide-react';
 
@@ -104,7 +105,7 @@ export default function Stats() {
             {/* Actual LeetCode Screenshot */}
             <div className="profile-image border border-white/5 bg-void-light/50 overflow-hidden">
               <img
-                src="/leetcode-profile.png"
+                src={assetUrl('leetcode-profile.png')}
                 alt="LeetCode Profile"
                 className="w-full h-auto object-cover"
                 loading="lazy"

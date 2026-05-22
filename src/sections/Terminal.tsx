@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { Terminal as TerminalIcon, X, ArrowRight, Check, Download, ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '@/lib/assets';
 
 interface TerminalProps {
   isOpen: boolean;
@@ -113,7 +114,7 @@ export default function Terminal({ isOpen, onOpen, onClose }: TerminalProps) {
     }
     if (trimmed === 'resume') {
       const link = document.createElement('a');
-      link.href = '/resume.pdf';
+      link.href = assetUrl('resume.pdf');
       link.download = 'VasuBhardwaj_Resume.pdf';
       link.click();
     }
@@ -215,7 +216,7 @@ export default function Terminal({ isOpen, onOpen, onClose }: TerminalProps) {
           {/* Resume CTA */}
           <div className="pt-8 border-t border-white/5">
             <a
-              href="/resume.pdf"
+              href={assetUrl('resume.pdf')}
               download
               className="group inline-flex items-center gap-3 px-8 py-4 border border-gold/30 text-gold font-body text-xs uppercase tracking-[0.2em] hover:bg-gold/10 transition-all duration-300"
             >

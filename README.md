@@ -35,6 +35,25 @@ npm run build
 npm run preview
 ```
 
+## Live site (GitHub Pages)
+
+**URL:** https://vasubhrdwj.github.io/vasu-bhardwaj-portfolio/
+
+Pushes to `main` deploy automatically via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
+First-time setup (if Pages is not enabled yet):
+
+1. Open **Settings → Pages** on the repo
+2. Set **Source** to **GitHub Actions**
+
+Local preview with the same base path as production:
+
+```bash
+npm run build && npm run preview
+```
+
+Then open the URL shown in the terminal (includes `/vasu-bhardwaj-portfolio/`).
+
 ## Author
 
 - GitHub: [@vasubhrdwj](https://github.com/vasubhrdwj)

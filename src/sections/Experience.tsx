@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Download, Briefcase, Calendar, MapPin, ArrowUpRight } from 'lucide-react';
+import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +47,7 @@ const experiences: ExperienceEntry[] = [
   },
 ];
 
-export default function Experience({ scrollTo }: { scrollTo: (target: string) => void }) {
+export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 

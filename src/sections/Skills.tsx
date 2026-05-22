@@ -5,8 +5,6 @@ import {
   Server,
   Brain,
   Database,
-  GitBranch,
-  Container,
   Workflow,
   Layers,
   Code2,
