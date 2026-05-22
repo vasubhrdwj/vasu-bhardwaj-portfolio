@@ -5,15 +5,45 @@ import { Download, Briefcase, Calendar, MapPin, ArrowUpRight } from 'lucide-reac
 
 gsap.registerPlugin(ScrollTrigger);
 
-const experiences = [
+type ExperienceFocus = {
+  title: string;
+  bullets: string[];
+};
+
+type ExperienceEntry = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  focusAreas: ExperienceFocus[];
+  highlights: string[];
+};
+
+const experiences: ExperienceEntry[] = [
   {
     company: 'Zenarate',
     role: 'Software Engineer',
     period: 'July 2025 – Present',
     location: 'Remote',
-    description:
-      'Building core backend systems and AI-driven operational tooling. Shipped a real-time inference pipeline that reduced model latency by 40%. Designed a distributed task queue handling 10K+ jobs per day.',
-    highlights: ['Distributed Systems', 'AI Tooling', 'Backend Architecture'],
+    focusAreas: [
+      {
+        title: 'Identity & Access Management / SCIM 2.0',
+        bullets: [
+          'Built and shipped a SCIM 2.0 provisioning service integrating Azure AD and Okta, automating user creation, updates, deactivation, and group sync for enterprise customers.',
+          'Reduced manual onboarding effort by 60% by productizing identity lifecycle workflows, improving admin experience and enterprise-readiness of the platform.',
+          'Implemented SCIM-compliant user and group APIs with secure token-based access, audit-friendly lifecycle handling, and integration support for major IdPs including Azure AD and Okta.',
+        ],
+      },
+      {
+        title: 'Event Ingestion / Kafka / OAuth',
+        bullets: [
+          'Developed a Kafka-based event ingestion pipeline with AWS Lambda workers to process xAPI analytics events at 250+ events/sec, enabling scalable learning activity tracking.',
+          'Built OAuth-secured service-to-service communication for the ingestion flow, improving security and reliability of analytics data movement across distributed services.',
+          'Productized analytics ingestion by designing an event-driven pipeline that decoupled data producers from downstream processing, improving scalability and fault tolerance.',
+        ],
+      },
+    ],
+    highlights: ['SCIM 2.0', 'Kafka', 'OAuth', 'AWS Lambda', 'Distributed Systems'],
   },
 ];
 
@@ -98,9 +128,25 @@ export default function Experience({ scrollTo }: { scrollTo: (target: string) =>
             </div>
           </div>
 
-          <p className="font-body text-sm text-white/60 leading-relaxed mb-6">
-            {experiences[0].description}
-          </p>
+          <div className="space-y-8 mb-6">
+            {experiences[0].focusAreas.map((area) => (
+              <div key={area.title}>
+                <h4 className="font-body text-xs uppercase tracking-[0.2em] text-gold mb-3">
+                  {area.title}
+                </h4>
+                <ul className="space-y-3">
+                  {area.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="font-body text-sm text-white/60 leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1 before:h-1 before:rounded-full before:bg-gold/60"
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
 
           <div className="flex flex-wrap gap-2 mb-8">
             {experiences[0].highlights.map((h) => (
