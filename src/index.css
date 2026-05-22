@@ -77,6 +77,11 @@
     box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
   }
 
+  /* Hero entrance targets — avoid tailwindcss-animate `.animate-in` collision */
+  .hero-reveal {
+    opacity: 1;
+  }
+
   .text-gradient-gold {
     background: linear-gradient(135deg, #d4af37 0%, #f0d878 50%, #d4af37 100%);
     -webkit-background-clip: text;

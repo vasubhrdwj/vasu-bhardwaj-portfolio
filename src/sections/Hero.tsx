@@ -120,7 +120,7 @@ export default function Hero({ scrollTo }: HeroProps) {
 
     // Text entrance animation (runs regardless of WebGL)
     if (textRef.current) {
-      const elements = textRef.current.querySelectorAll('.animate-in');
+      const elements = textRef.current.querySelectorAll('.hero-reveal');
       gsap.fromTo(
         elements,
         { y: 60, opacity: 0 },
@@ -164,22 +164,22 @@ export default function Hero({ scrollTo }: HeroProps) {
         ref={textRef}
         className="relative z-10 text-center px-6 max-w-5xl mx-auto"
       >
-        <p className="animate-in font-body text-xs uppercase tracking-[0.2em] text-white/40 mb-6">
+        <p className="hero-reveal font-body text-xs uppercase tracking-[0.2em] text-white/40 mb-6">
           Backend Engineer · AI Systems · Distributed Infrastructure
         </p>
 
-        <h1 className="animate-in font-display text-[14vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[0.9] tracking-tight mb-8">
+        <h1 className="hero-reveal font-display text-[14vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[0.9] tracking-tight mb-8">
           <span className="block">VASU</span>
           <span className="block text-gradient-gold">BHARDWAJ</span>
         </h1>
 
-        <p className="animate-in font-body text-sm md:text-base text-white/50 max-w-xl mx-auto leading-relaxed mb-12">
+        <p className="hero-reveal font-body text-sm md:text-base text-white/50 max-w-xl mx-auto leading-relaxed mb-12">
           I design and ship backend systems for high-stakes environments. Currently
           building AI-driven operational tooling at Zenarate. Ranked Top 5% globally
           on LeetCode. I care about reliability, performance, and clean architecture.
         </p>
 
-        <div className="animate-in flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="hero-reveal flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={() => scrollTo('#projects')}
             className="group relative px-8 py-3 bg-gold text-void font-body text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold-light transition-all duration-300"
