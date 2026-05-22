@@ -26,7 +26,14 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - name: Build for GitHub Pages
+        run: |
+          if [ "${{ github.repository }}" = "vasubhrdwj/vasubhrdwj.github.io" ]; then
+            npm run build
+          else
+            VITE_BASE_PATH=/vasu-bhardwaj-portfolio/ npm run build
+          fi
+      - run: cp dist/index.html dist/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:

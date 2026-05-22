@@ -124,7 +124,15 @@ export default function Hero({ scrollTo }: HeroProps) {
       gsap.fromTo(
         elements,
         { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: 'power3.out', delay: 0.3 }
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          stagger: 0.15,
+          ease: 'power3.out',
+          delay: 0.3,
+          immediateRender: false,
+        }
       );
     }
 

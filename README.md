@@ -37,7 +37,7 @@ npm run preview
 
 ## Live site (GitHub Pages)
 
-**URL:** https://vasubhrdwj.github.io/vasu-bhardwaj-portfolio/
+**URL:** https://vasubhrdwj.github.io/
 
 Pushes to `main` deploy automatically via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
