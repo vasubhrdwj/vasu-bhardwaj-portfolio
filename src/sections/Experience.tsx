@@ -24,7 +24,7 @@ const experiences: ExperienceEntry[] = [
     company: 'Zenarate',
     role: 'Software Engineer',
     period: 'July 2025 – Present',
-    location: 'Remote',
+    location: 'Gurugram',
     focusAreas: [
       {
         title: 'Identity & Access Management / SCIM 2.0',
@@ -160,7 +160,7 @@ export default function Experience({ scrollTo }: { scrollTo: (target: string) =>
           </div>
 
           {/* Resume CTA */}
-          <div className="pt-8 border-t border-white/10">
+          {/* <div className="pt-8 border-t border-white/10">
             <a
               href="/resume.pdf"
               download
@@ -176,7 +176,7 @@ export default function Experience({ scrollTo }: { scrollTo: (target: string) =>
             <p className="font-body text-xs text-white/30 mt-4">
               Full career history and references available on request
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

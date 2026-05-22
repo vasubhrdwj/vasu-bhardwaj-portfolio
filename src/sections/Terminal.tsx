@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
-import { Terminal as TerminalIcon, X, ArrowRight, Check } from 'lucide-react';
+import { Terminal as TerminalIcon, X, ArrowRight, Check, Download, ArrowUpRight } from 'lucide-react';
 
 interface TerminalProps {
   isOpen: boolean;
@@ -187,7 +187,7 @@ export default function Terminal({ isOpen, onOpen, onClose }: TerminalProps) {
         ref={containerRef}
         className="relative w-full py-24 md:py-32 px-6 lg:px-8 bg-void"
       >
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center mb-10">
           <p className="font-body text-xs uppercase tracking-[0.35em] text-gold mb-4">
             Get in Touch
           </p>
@@ -212,6 +212,24 @@ export default function Terminal({ isOpen, onOpen, onClose }: TerminalProps) {
             />
           </button>
         </div>
+        {/* Resume CTA */}
+          <div className="pt-8">
+            <a
+              href="/resume.pdf"
+              download
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-void font-body text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold-light transition-all duration-300"
+            >
+              <Download size={14} />
+              <span>Download Resume</span>
+              <ArrowUpRight
+                size={14}
+                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              />
+            </a>
+            <p className="font-body text-xs text-white/30 mt-4">
+              Full career history and references available on request
+            </p>
+          </div>
       </section>
 
       {/* Terminal Overlay */}
