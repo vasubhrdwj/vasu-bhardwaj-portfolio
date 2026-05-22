@@ -10,8 +10,11 @@ const projects = [
     id: 1,
     title: 'Incident Commander',
     subtitle: 'Autonomous LLM Operations',
-    description:
-      'An autonomous incident-response system powered by a fine-tuned 7B LLM. Trained with GRPO reinforcement learning to diagnose production outages, delegate tasks to specialist agents, and write post-mortems — all without human intervention.',
+    description: `An LLM agent that takes on the on-call engineer role at a simulated fintech company. It receives incident alerts, investigates through tool calls (logs, metrics, runbooks), forms hypotheses, and either resolves or escalates with a coherent handoff.`,
+    highlights: [
+      'Built end-to-end in hackathon time: environment design, agent loop, tool surface, evaluation',
+      'No tutorial scaffolding — shaped how I think about AI in production',
+    ],
     image: '/image-1.jpg',
     tags: ['Python', 'Pydantic', 'WebSocket', 'TRL', 'Unsloth', 'GRPO'],
     github: 'https://github.com/vasubhrdwj/incident-commander-openenv',
@@ -22,6 +25,7 @@ const projects = [
     subtitle: 'High-Availability Infrastructure',
     description:
       'A Layer 4 load balancer built with HAProxy for a FastAPI microservices cluster. Features active health checks, rate limiting, and automated failover — fully containerized with Docker Compose.',
+    highlights: [],
     image: '/image-2.jpg',
     tags: ['HAProxy', 'Docker', 'FastAPI', 'DevOps', 'JavaScript', 'Python'],
     github: 'https://github.com/vasubhrdwj/l4-load-balancer',
@@ -140,9 +144,21 @@ export default function Projects() {
                   <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                     {project.title}
                   </h3>
-                  <p className="font-body text-sm text-white/50 leading-relaxed mb-8">
+                  <p className="font-body text-sm text-white/50 leading-relaxed mb-6">
                     {project.description}
                   </p>
+
+                  {/* Highlights */}
+                  {project.highlights.length > 0 && (
+                    <ul className="mb-6 space-y-2">
+                      {project.highlights.map((h, idx) => (
+                        <li key={idx} className="flex items-start gap-2 font-body text-xs text-white/40 leading-relaxed">
+                          <span className="text-gold mt-0.5">—</span>
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-8">

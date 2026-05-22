@@ -202,7 +202,7 @@ export default function Terminal({ isOpen, onOpen, onClose }: TerminalProps) {
 
           <button
             onClick={onOpen}
-            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gold text-void font-body text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold-light transition-colors duration-300 overflow-hidden"
+            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gold text-void font-body text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold-light transition-colors duration-300 overflow-hidden mb-10"
           >
             <TerminalIcon size={16} />
             <span>Open Terminal</span>
@@ -211,13 +211,13 @@ export default function Terminal({ isOpen, onOpen, onClose }: TerminalProps) {
               className="group-hover:translate-x-1 transition-transform"
             />
           </button>
-        </div>
-        {/* Resume CTA */}
-          <div className="pt-8">
+
+          {/* Resume CTA */}
+          <div className="pt-8 border-t border-white/5">
             <a
               href="/resume.pdf"
               download
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-void font-body text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold-light transition-all duration-300"
+              className="group inline-flex items-center gap-3 px-8 py-4 border border-gold/30 text-gold font-body text-xs uppercase tracking-[0.2em] hover:bg-gold/10 transition-all duration-300"
             >
               <Download size={14} />
               <span>Download Resume</span>
@@ -226,10 +226,8 @@ export default function Terminal({ isOpen, onOpen, onClose }: TerminalProps) {
                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
               />
             </a>
-            <p className="font-body text-xs text-white/30 mt-4">
-              Full career history and references available on request
-            </p>
           </div>
+        </div>
       </section>
 
       {/* Terminal Overlay */}
