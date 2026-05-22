@@ -15,7 +15,7 @@ const projects = [
       'Built end-to-end in hackathon time: environment design, agent loop, tool surface, evaluation',
       'No tutorial scaffolding — shaped how I think about AI in production',
     ],
-    image: '/image-1.jpg',
+    image: '/incident-commander.png',
     tags: ['Python', 'Pydantic', 'WebSocket', 'TRL', 'Unsloth', 'GRPO'],
     github: 'https://github.com/vasubhrdwj/incident-commander-openenv',
   },
